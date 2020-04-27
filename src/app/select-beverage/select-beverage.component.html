@@ -1,0 +1,5 @@
+<ul>
+    <li *ngFor="let beverage of beverages">
+        <button (click)="onBeverageSelected.emit(beverage)">{{beverage}} </button>
+    </li>
+</ul>

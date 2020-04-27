@@ -1,0 +1,39 @@
+<!-- <div *ngIf="!neverhere">
+    <div *ngIf="!saveName">
+        <p>Howdy, stranger. Haven't seen your face around here before. What's your name?</p>
+        <input [(ngModel)]="name" /> <button (click)="onClick($event)">Okey</button>
+    </div>
+    <div  *ngIf="saveName">
+        {{message}}
+        <div *ngIf="beverage">
+            <app-the-usual (onUsualSelected)="remember($event)" [favorite]="favoriteBeverage()" ></app-the-usual> 
+        </div>
+    </div>
+<div *ngIf="saveName">
+    <app-select-beverage (onBeverageSelected)="remember($event)"></app-select-beverage>
+</div>
+<h1 *ngIf="beverageSelected"> One {{beverage}} coming right up</h1>
+
+    <button (click)="forgetMe()">I was never here</button>
+</div>
+<div *ngIf="neverhere">Got it. Who are you again?</div> -->
+
+
+
+<!-- ---test------>
+<div class="nomargin">
+    <div *ngIf="!beverageSelected && !saveName">
+        {{startDialogue}}
+    </div>
+        <div *ngIf="!saveName">
+        <input [(ngModel)]="name" /> <button (click)="onClick(name)">Okey</button>
+    </div>
+    <div *ngIf="saveName && !beverageSelected">
+        {{message}}
+        <app-select-beverage (onBeverageSelected)="remember($event)"></app-select-beverage>
+        <app-the-usual (onUsualSelected)="remember($event)" [favorite]="favoriteBeverage()" ></app-the-usual>  
+    </div>
+    
+</div>
+<div *ngIf="beverageSelected">One {{beverage}} coming right up</div>
+<button (click)="forgetMe()">I was never here</button>

@@ -1,0 +1,12 @@
+div{
+    margin: 10px;
+}
+button{
+    margin: 10px;
+}
+div > button{
+    margin-left: 0px;
+}
+.nomargin{
+    margin: 0px;
+}
